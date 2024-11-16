@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ This page is used to define global styles for the application.
+
+ Feel free to add any global styles here.
+**/
+
+/* Tag styles */
+body {
+  font-family: 'IBM Plex Mono';
+}
+
+blockquote {
+  @apply bg-base-300 p-4 border-l-4 italic my-4 pl-8 py-2 shadow-md shadow-gray-900;
+}
+
+h1,
+h2,
+h3,
+h4.h5,
+h6 {
+  font-family: 'Open Sans', sans-serif;
+  @apply pb-4 pt-8 text-base-content font-bold;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+/* Class styles */
+.font-fjalla-one {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.mdimage {
+  @apply mx-auto my-4;
+}
+
+.hyperlink {
+  @apply mx-2 text-accent font-mono border-b border-dashed pb-1 border-accent;
+}
+
+.li-checked:before {
+  content: '✓';
+  @apply mr-2 text-success;
+}
+
+.btn {
+  @apply font-normal;
+}
+
+.btn-neutral {
+  @apply border border-marble-500;
+}
+
+/* .btn-normal {
+  @apply bg-primary-500 text-primary-content;
+} */
+
+.btn-link {
+  @apply text-primary-content;
+}
+
+.btn-normal {
+  @apply bg-base-200 text-mushroom-900 border border-mushroom-500;
+}
+
+.box {
+  @apply bg-base-200 p-4 rounded-md;
+}
+
+.box-neutral {
+  @apply border border-marble-500 bg-mushroom-100 rounded-md p-4;
+}
