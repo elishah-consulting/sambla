@@ -23,7 +23,7 @@ h3,
 h4.h5,
 h6 {
   font-family: 'Open Sans', sans-serif;
-  @apply pb-4 pt-8 text-base-content font-bold;
+  @apply mb-4 text-base-content font-bold;
 }
 
 h1 {

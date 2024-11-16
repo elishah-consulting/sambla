@@ -3,6 +3,7 @@ export type User = {
   email?: string;
   is_verified_email?: boolean;
   name?: string;
+  type?: string;
   created_at?: Date;
   updated_at?: Date;
   deleted_at?: Date;
