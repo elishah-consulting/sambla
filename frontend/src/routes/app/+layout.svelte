@@ -12,27 +12,12 @@
 
   const docs = [
     {
-      title: 'General',
-      link: '',
-      type: 'header',
+      title: 'Properties',
+      link: '/app',
     },
     {
-      title: 'Github Repository',
-      link: 'https://github.com/elishah-consulting/daytwo-js',
-      type: 'github',
-    },
-    {
-      title: 'General',
-      link: '',
-      type: 'header',
-    },
-    {
-      title: 'Feature A',
-      link: '/app/feature-a',
-    },
-    {
-      title: 'Sample Markdown',
-      link: '/app/sample-markdown',
+      title: 'My rental',
+      link: '/app/properties',
     },
     {
       title: 'Settings',

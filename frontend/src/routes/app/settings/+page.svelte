@@ -1,5 +1,6 @@
 <script lang="ts">
   import D2Input from '$lib/components/D2Input.svelte';
+  import D2InputField from '$lib/components/D2InputField.svelte';
   import { setToast } from '$lib/stores/stores.js';
   import { superForm } from 'sveltekit-superforms';
   import IcRoundWarningAmber from '~icons/ic/round-warning-amber';
@@ -69,7 +70,7 @@
           <h5>General settings</h5>
         </div>
         <div class="grid gap-4">
-          <D2Input
+          <D2InputField
             label="name"
             placeholder="Name"
             name="name"
@@ -80,7 +81,19 @@
           <input type="hidden" name="id" value={data?.user?.id} />
         </div>
 
-        <button type="submit" class="btn btn-primary w-full">Change name</button>
+        <div class="grid gap-4">
+          <D2InputField
+            label="wallet ID"
+            placeholder="wallet"
+            name="walletId"
+            bind:value={$changeNameForm.name}
+            errorText={$changeNameFormErrors.name}
+          />
+
+          <input type="hidden" name="id" value={data?.user?.id} />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full">Update</button>
       </form>
     </div>
 
@@ -95,7 +108,7 @@
           <h5>Password</h5>
         </div>
         <div class="grid gap-4">
-          <D2Input
+          <D2InputField
             label="password"
             placeholder="Password"
             name="password"
