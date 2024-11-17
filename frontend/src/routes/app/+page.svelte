@@ -8,28 +8,8 @@
   const user = data?.user;
 
   let form;
-  let properties = [
-    {
-      id: 1,
-      name: 'property 1',
-      description: 'description 1',
-      location: 'Dubai Palm Hills',
-      amount: 1000,
-      numBed: 4,
-      numBath: 2,
-      currency: 'aed',
-    },
-    {
-      id: 2,
-      name: 'property 2',
-      description: 'description 2',
-      location: 'Dubai Marina',
-      amount: 2000,
-      numBed: 3,
-      numBath: 2,
-      currency: 'aed',
-    },
-  ];
+  let properties = [];
+  $: properties = data?.properties || [];
 
   const {
     form: searchForm,
@@ -71,7 +51,7 @@
       </div>
     </form>
     {#each properties as property}
-      <div class="bg-base-200 rounded rounded-md flex">
+      <a class="bg-base-200 rounded-md flex" href="/app/properties/{property.id}">
         <div>
           <img
             src="property.jpg"
@@ -91,7 +71,7 @@
             {property?.amount}
           </p>
         </div>
-      </div>
+      </a>
     {/each}
   </div>
 {:else}

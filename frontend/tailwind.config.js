@@ -80,7 +80,7 @@ export default {
           '--border-btn': '1px',
         },
         dark: {
-          ...daisyui.themes.dark,
+          // ...daisyui.themes.dark,
           primary: '#db2777',
           'base-300': '#090909',
           'primary-focus': 'mediumblue',

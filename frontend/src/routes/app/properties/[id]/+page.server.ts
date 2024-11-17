@@ -9,6 +9,7 @@ const searchFormSchema = z.object({
 });
 
 export const load: PageServerLoad = async ({ request, params, url, cookies }) => {
+  const id = params.id;
   // Get JWT
   const jwtService = new JWTService(cookies);
   const access_token = jwtService.get();
@@ -17,5 +18,5 @@ export const load: PageServerLoad = async ({ request, params, url, cookies }) =>
 
   const searchForm = await superValidate(zod(searchFormSchema));
 
-  return { properties, searchForm };
+  return { id, properties, searchForm };
 };

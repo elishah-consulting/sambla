@@ -2,7 +2,7 @@
   import D2Breadcrumb from '$lib/components/D2Breadcrumb.svelte';
 
   export let data;
-  const user = data?.user;
+  const id = data?.id || '';
 </script>
 
 <div class="p-4 flex flex-col gap-4">
@@ -10,7 +10,7 @@
   <h1>Property</h1>
 
   <div class="box">
-    <div>ID: 123</div>
+    <div>ID: {id}</div>
     <div>Rent: 123 AED</div>
   </div>
 

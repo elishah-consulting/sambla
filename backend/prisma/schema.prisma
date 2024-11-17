@@ -14,14 +14,17 @@ datasource db {
 }
 
 model User {
-  id         String    @id @default(uuid())
-  email      String    @unique
-  password   String
-  name       String?
-  type       String    @default("tenant")
-  created_at DateTime  @default(now())
-  updated_at DateTime  @updatedAt
-  deleted_at DateTime?
+  id                String     @id @default(uuid())
+  email             String     @unique
+  password          String
+  name              String?
+  type              String     @default("tenant")
+  wallet_address    String?
+  created_at        DateTime   @default(now())
+  updated_at        DateTime   @updatedAt
+  deleted_at        DateTime?
+  CreatedProperties Property[] @relation(name: "CreatedProperties")
+  RentedProperties  Property[] @relation(name: "RentedProperties")
 }
 
 model PasswordReset {
@@ -41,4 +44,23 @@ model StripeCheckoutSession {
   updated_at                 DateTime @updatedAt
 
   @@unique([email, stripe_checkout_session_id])
+}
+
+model Property {
+  id                 String   @id @default(uuid())
+  created_by_user_id String
+  rented_by_user_id  String?
+  name               String
+  description        String
+  location           String
+  amount             Float
+  num_bedrooms       Int
+  num_bathrooms      Int
+  status             String
+  contract_address   String?
+  currency           String
+  CreatedByUser      User?    @relation(name: "CreatedProperties", fields: [created_by_user_id], references: [id])
+  RentedByUser       User?    @relation(name: "RentedProperties", fields: [rented_by_user_id], references: [id])
+  created_at         DateTime @default(now())
+  updated_at         DateTime @updatedAt
 }

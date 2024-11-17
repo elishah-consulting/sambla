@@ -9,6 +9,7 @@ import { PasswordResetsModule } from './password-resets/password-resets.module';
 import { PostmarkService } from './postmark/postmark.service';
 import { PostmarkModule } from './postmark/postmark.module';
 import { EmailModule } from './email/email.module';
+import { PropertiesModule } from './properties/properties.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { EmailModule } from './email/email.module';
     PasswordResetsModule,
     PostmarkModule,
     EmailModule,
+    PropertiesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
